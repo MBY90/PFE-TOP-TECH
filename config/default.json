@@ -1,0 +1,4 @@
+{
+    "MONGOURI":"mongodb+srv://mby90:med@551990@cluster0.zt5ic.mongodb.net/PFE?retryWrites=true&w=majority",
+    "jwtSecret":"top-techJwtSecret"
+} 
