@@ -4,10 +4,14 @@ const User =require("../models/User");
 const bcrypt=require('bcryptjs');
 const config =require('config');
 const jwt =require('jsonwebtoken');
-
+const validator = require("email-validator");
 
 router.post('/',(req,res)=>{
 const{email,password}=req.body;
+if(validator.validate(email)===false)
+{return res.status(400).json({msg:'not a valide email'});}
+if(password.length<=8)
+{return res.status(400).json({msg:'password must be greater than 8 characters'});}
 if(!email||!password)
 {return res.status(400).json({msg:'Please enter all filels'});}
 
