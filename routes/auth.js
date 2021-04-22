@@ -21,7 +21,7 @@ User.findOne({email})
         jwt.sign(
             {id:user._id},
             config.get('jwtSecret'),
-            {expiresIn:3600},
+           
             (err,token)=>{
                 if(err) throw err;
                 res.json({
