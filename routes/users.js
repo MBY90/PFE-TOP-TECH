@@ -10,6 +10,7 @@ const auth = require("../middelware/auth");
 
 router.post('/',(req,res)=>{
 const{email,password}=req.body;
+
 if(!email||!password)
 {return res.status(400).json({msg:'Please enter all filels'});}
 if(validator.validate(email)===false)
