@@ -28,7 +28,14 @@ router.post("/newSensor", auth,(req, res) => {
   {
       const { user } = req.params;
       Sensor.find({ user })
-       .then((sensors) => res.send(sensors))
+       .then((sensors) =>
+       
+       {
+         if(!sensors) return res.status(400).json({msg:'no sensors for this user '});
+        res.send(sensors)
+
+       }
+      )
         .catch((err) => res.send(err));
 
   }
