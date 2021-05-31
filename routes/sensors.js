@@ -36,7 +36,9 @@ router.post("/newSensor", auth,(req, res) => {
 
        }
       )
-        .catch((err) => res.send(err));
+        .catch((err) =>   res.status(400).json({ msg: err.message })
+        
+        );
 
   }
   
@@ -55,7 +57,7 @@ router.post("/newSensor", auth,(req, res) => {
       }
       
       )
-      .catch((err) => res.send(err));
+      .catch((err) => res.status(400).json({ msg: err.message }));
   });
 
   router.delete("/delete/:sensor_name",auth, (req, res) => {
@@ -66,6 +68,6 @@ router.post("/newSensor", auth,(req, res) => {
       res.send(sensors)
   }
       )
-      .catch((err) => res.send(err));
+      .catch((err) => res.status(400).json({ msg: err.message }));
   });
   module.exports = router;
