@@ -14,8 +14,7 @@ router.post("/newSensor", auth,(req, res) => {
     newSensor
       .save()
       .then((sensors) => res.send(sensors))
-      .catch((err) => {res.status(400).json({msg:'sensor already exists'})
-                    
+      .catch((err) => {res.send(err)
 }
       );
               
