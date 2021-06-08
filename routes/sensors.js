@@ -23,7 +23,7 @@ router.post("/newSensor", auth,(req, res) => {
 
 
 
-  router.get("/updatedsensor/:user",auth,(req,res)=>
+  router.get("/updatedsensor/:user",(req,res)=>
   {
       const { user } = req.params;
       Sensor.find({ user })
